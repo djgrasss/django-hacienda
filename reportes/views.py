@@ -32,24 +32,24 @@ def licencia_expendio_alcohol(request):
     elementos.setFont("Helvetica", 11) # Tamaño de letra
 
     # Primera fila
-    elementos.drawCentredString(PAGE_WIDTH-13.5*cm, PAGE_HEIGHT-5.6*cm, 'RODRIGO LEONIDAS BRAVO QUIÑONES')
-    elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-5.6*cm, '0034530629')
+    elementos.drawCentredString(PAGE_WIDTH-13.5*cm, PAGE_HEIGHT-5.6*cm, 'RODRIGO BRAVO')
+    elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-5.6*cm, '0034530')
 
     # Segunda fila
-    elementos.drawCentredString(PAGE_WIDTH-18.5*cm, PAGE_HEIGHT-7.3*cm, 'J-19724458-1')
+    elementos.drawCentredString(PAGE_WIDTH-18.5*cm, PAGE_HEIGHT-7.3*cm, 'J-19724-1')
     elementos.drawCentredString(PAGE_WIDTH-13*cm, PAGE_HEIGHT-7.3*cm, 'CERVECERIA POLAR C.A')
-    elementos.drawCentredString(PAGE_WIDTH-6.5*cm, PAGE_HEIGHT-7.3*cm, 'V-19724458')
-    elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-7.3*cm, '0000458585')
+    elementos.drawCentredString(PAGE_WIDTH-6.5*cm, PAGE_HEIGHT-7.3*cm, 'V-19724')
+    elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-7.3*cm, '00004585')
 
     # Tercera fila
     elementos.drawCentredString(PAGE_WIDTH-14.5*cm, PAGE_HEIGHT-9.2*cm, 'Av. Fuerzas Armadas. Calle Zulia # 20')
-    elementos.drawCentredString(PAGE_WIDTH-6.2*cm, PAGE_HEIGHT-9.2*cm, 'EZQ. ZAMORA')
-    elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-9.2*cm, 'COJEDES')
+    elementos.drawCentredString(PAGE_WIDTH-6.2*cm, PAGE_HEIGHT-9.2*cm, 'ZAMORA')
+    elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-9.2*cm, 'COJ')
 
     # Cuarta fila
     elementos.drawCentredString(PAGE_WIDTH-19.2*cm, PAGE_HEIGHT-12.0*cm, '17-04-2009')
-    elementos.drawCentredString(PAGE_WIDTH-15.5*cm, PAGE_HEIGHT-12.0*cm, 'CARONÍ')
-    elementos.drawCentredString(PAGE_WIDTH-12.3*cm, PAGE_HEIGHT-12.0*cm, 'SAN CARLOS')
+    elementos.drawCentredString(PAGE_WIDTH-15.5*cm, PAGE_HEIGHT-12.0*cm, 'Municipio')
+    elementos.drawCentredString(PAGE_WIDTH-12.3*cm, PAGE_HEIGHT-12.0*cm, 'Estado')
     elementos.drawCentredString(PAGE_WIDTH-9.5*cm, PAGE_HEIGHT-12.0*cm, '204515')
     elementos.drawCentredString(PAGE_WIDTH-6.3*cm, PAGE_HEIGHT-12.0*cm, '200.000')
     elementos.drawCentredString(PAGE_WIDTH-2.5*cm, PAGE_HEIGHT-12.0*cm, '9000300001')
@@ -100,7 +100,7 @@ def vauche_imprimir(request):
     elementos.drawCentredString(PAGE_WIDTH-8.5*cm, PAGE_HEIGHT-0.7*cm, 'x')
 
     # Datos del depositante
-    elementos.drawCentredString(PAGE_WIDTH-15.5*cm, PAGE_HEIGHT-2.0*cm, 'Alcaldía de San Carlos')
+    elementos.drawCentredString(PAGE_WIDTH-15.5*cm, PAGE_HEIGHT-2.0*cm, 'Alcaldía')
     elementos.drawCentredString(PAGE_WIDTH-15.5*cm, PAGE_HEIGHT-3.3*cm, 'Luis Carlos Rodriguez Quiñones')
     elementos.drawCentredString(PAGE_WIDTH-15.5*cm, PAGE_HEIGHT-4.0*cm, '20.522.392')
 
@@ -144,11 +144,11 @@ def liquidacion_report(request, liquidacion):
         elementos.append(logo)
 
         elementos.append(Spacer(1, -35))
-        txtEncabezado = 'República Bolivariana de Venezuela'
-        txtEncabezado += '<br />Estado Cojedes'
-        txtEncabezado += '<br />Alcaldía del Municipio San Carlos'
+        txtEncabezado = 'País'
+        txtEncabezado += '<br />Estado'
+        txtEncabezado += '<br />Alcaldía'
         txtEncabezado += '<br />Dirección de Rentas Municipales'
-        txtEncabezado += '<br />RIF: G-200003371-1'
+        txtEncabezado += '<br />RIF: x'
         encabezado = Paragraph(txtEncabezado, cabecera)
         elementos.append(encabezado)
         #---> Fin Encabezado <---
@@ -292,7 +292,7 @@ def liquidacion_report(request, liquidacion):
         elementos.append(txtNota1)
 
         txtNota2 = Paragraph('Para más información dirijase a las oficinas de Rentas Municipales.'+
-                             '<br />Atención: ING. Glendys Quiñones' +
+                             '<br />Atención: Directora x' +
                              '<br /><b>Directora</b>', parrafo)
         elementos.append(txtNota2)
         #---> Fin Notas <---
@@ -367,11 +367,11 @@ def boletin_liquid_definitiva(request, liquidacion):
         elementos.append(logo)
 
         elementos.append(Spacer(1, -35))
-        txtEncabezado = 'República Bolivariana de Venezuela'
-        txtEncabezado += '<br />Estado Cojedes'
-        txtEncabezado += '<br />Alcaldía del Municipio San Carlos'
+        txtEncabezado = 'País'
+        txtEncabezado += '<br />Estado'
+        txtEncabezado += '<br />Alcaldía'
         txtEncabezado += '<br />Dirección de Rentas Municipales'
-        txtEncabezado += '<br />RIF: G-200003371-1'
+        txtEncabezado += '<br />RIF: '
         encabezado = Paragraph(txtEncabezado, cabecera)
         elementos.append(encabezado)
         #---> Fin Encabezado <---
@@ -517,7 +517,7 @@ def boletin_liquid_definitiva(request, liquidacion):
         parrafo.alignment = TA_CENTER
 
         elementos.append(Spacer(1, 15))
-        txtNota3 = Paragraph('<b>Evite Sanciones... Cumpla con su Ciudad...!<br />SAN CARLOS SOMOS TODOS..!</b>', parrafo)
+        txtNota3 = Paragraph('<b>Evite Sanciones... Cumpla con su Ciudad...!</b>', parrafo)
         elementos.append(txtNota3)
 
         styleSheet3 = getSampleStyleSheet()
@@ -541,7 +541,7 @@ def boletin_liquid_definitiva(request, liquidacion):
         elementos.append(l2)
 
         elementos.append(Spacer(1, -15))
-        txtNota4 = Paragraph('<hr /><br />ING. Glendys Quiñones' +
+        txtNota4 = Paragraph('<hr /><br />Directora x' +
                              '<br /><b>Directora</b>', parrafo)
         elementos.append(txtNota4)
 
@@ -593,11 +593,11 @@ def boletin_liquid_estimada(request, liquidacion):
         elementos.append(logo)
 
         elementos.append(Spacer(1, -35))
-        txtEncabezado = 'República Bolivariana de Venezuela'
-        txtEncabezado += '<br />Estado Cojedes'
-        txtEncabezado += '<br />Alcaldía del Municipio San Carlos'
+        txtEncabezado = 'País'
+        txtEncabezado += '<br />Estado'
+        txtEncabezado += '<br />Alcaldía'
         txtEncabezado += '<br />Dirección de Rentas Municipales'
-        txtEncabezado += '<br />RIF: G-200003371-1'
+        txtEncabezado += '<br />RIF: '
         encabezado = Paragraph(txtEncabezado, cabecera)
         elementos.append(encabezado)
         #---> Fin Encabezado <---
@@ -795,7 +795,7 @@ def boletin_liquid_estimada(request, liquidacion):
         parrafo.alignment = TA_CENTER
 
         elementos.append(Spacer(1, 5))
-        txtNota3 = Paragraph('<b>Evite Sanciones... Cumpla con su Ciudad...!<br />SAN CARLOS SOMOS TODOS..!</b>', parrafo)
+        txtNota3 = Paragraph('<b>Evite Sanciones... Cumpla con su Ciudad...!</b>', parrafo)
         elementos.append(txtNota3)
 
         styleSheet3 = getSampleStyleSheet()
@@ -819,7 +819,7 @@ def boletin_liquid_estimada(request, liquidacion):
         elementos.append(l2)
 
         elementos.append(Spacer(1, -20))
-        txtNota4 = Paragraph('<hr /><br />ING. Glendys Quiñones' +
+        txtNota4 = Paragraph('<hr /><br />Directora x' +
                              '<br /><b>Directora</b>', parrafo)
         elementos.append(txtNota4)
 
